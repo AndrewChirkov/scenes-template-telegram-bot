@@ -1,5 +1,7 @@
 import userModel from "../database/models/user.model";
 import { CustomContext } from "../types/custom-context.types";
+import { UserDocument } from "../types/user.types";
+import { Languages } from "./../types/languages.types";
 
 class UserService {
   async register(ctx: CustomContext) {
@@ -29,8 +31,24 @@ class UserService {
   }
 
   async getUser(telegramId: number) {
-    return await userModel.findOne({ telegramId });
+    return userModel.findOne({ telegramId });
+  }
+
+  async updateLanguage(languageCode: Languages, userDoc: UserDocument) {
+    return userModel.updateOne({ userId: userDoc.userId }, { "state.language": languageCode });
+  }
+
+  async updateNickName(nickname: string, userDoc: UserDocument) {
+    return userModel.updateOne({ userId: userDoc.userId }, { nickname });
+  }
+
+  async updateAge(age: number, userDoc: UserDocument) {
+    return userModel.updateOne({ userId: userDoc.userId }, { age });
+  }
+
+  async updateCity(city: string, userDoc: UserDocument) {
+    return userModel.updateOne({ userId: userDoc.userId }, { city });
   }
 }
 
-export default new UserService();
+export const userService = new UserService();

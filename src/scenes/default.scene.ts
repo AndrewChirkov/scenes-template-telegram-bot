@@ -1,17 +1,17 @@
 import userModel from "../database/models/user.model";
 import { CustomContext } from "../types/custom-context.types";
 import { Scenes } from "../types/scenes.types";
-import { User } from "../types/user.types";
+import { UserDocument } from "../types/user.types";
 
 export class Scene {
   protected textPayload: string;
   protected queryPayload: string;
   protected telegramId: number;
 
-  constructor(public ctx: CustomContext, public user: User) {
+  constructor(public ctx: CustomContext, public user: UserDocument) {
     this.textPayload = ctx.message?.text;
     this.queryPayload = ctx.callbackQuery?.data;
-    this.telegramId = ctx.from.id;
+    this.telegramId = ctx.from?.id;
     this.user = user;
   }
 
@@ -40,9 +40,9 @@ export class Scene {
     );
   }
 
-  async init(): Promise<void> {}
+  async init(): Promise<any> {}
 
-  async enter(): Promise<void> {}
+  async enter(): Promise<any> {}
 
-  async handler(): Promise<void> {}
+  async handler(): Promise<any> {}
 }

@@ -1,3 +1,4 @@
+global@errorTypeMessage: "Нет такого варианта ответа"
 register@start: Привет, я бот инвестор
 register@selectLanguage: Выбери свой язык
 

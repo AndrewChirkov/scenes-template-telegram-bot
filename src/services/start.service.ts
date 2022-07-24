@@ -1,7 +1,7 @@
 import { scenesRouter } from "../scenes/scenes-router/scenes-router";
 import { StartScene } from "../scenes/start.scene";
 import { CustomContext } from "../types/custom-context.types";
-import userService from "./user.service";
+import { userService } from "./user.service";
 
 class StartService {
   async start(ctx: CustomContext) {
@@ -20,4 +20,4 @@ class StartService {
   }
 }
 
-export default new StartService();
+export const startService = new StartService();

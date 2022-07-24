@@ -1,13 +1,13 @@
-import userService from "../services/user.service";
+import { userService } from "../services/user.service";
 import { CustomContext } from "../types/custom-context.types";
 import { Scenes } from "../types/scenes.types";
 import { Texts } from "../types/texts.types";
-import { User } from "../types/user.types";
+import { UserDocument } from "../types/user.types";
 import { Scene } from "./default.scene";
 import { SelectLanguageScene } from "./select-language.scene";
 
 export class StartScene extends Scene {
-  constructor(public ctx: CustomContext, public user: User) {
+  constructor(public ctx: CustomContext, public user: UserDocument) {
     super(ctx, user);
   }
 
