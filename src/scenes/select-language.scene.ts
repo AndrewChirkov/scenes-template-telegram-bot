@@ -11,7 +11,7 @@ export class SelectLanguageScene extends Scene {
   }
 
   async enter() {
-    await this.ctx.reply('Select Language')
+    await this.ctx.reply('🌐 Select your language')
   }
 
   async init() {
