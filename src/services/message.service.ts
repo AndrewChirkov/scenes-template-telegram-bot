@@ -1,4 +1,4 @@
-import { scenesRouter } from "../scenes/scenes-router/scenesRouter";
+import { scenesRouter } from "../scenes/scenes-router/scenes-router";
 import { CustomContext } from "../types/custom-context.types";
 import userService from "./user.service";
 

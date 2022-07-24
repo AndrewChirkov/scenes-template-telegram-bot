@@ -10,6 +10,10 @@ export class SelectLanguageScene extends Scene {
     super(ctx, user);
   }
 
+  async enter() {
+    await this.ctx.reply('Select Language')
+  }
+
   async init() {
     await this.changeScene(Scenes.SelectLanguage);
   }

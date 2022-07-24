@@ -14,7 +14,5 @@ export const scenesRouter = (
       return new StartScene(ctx, user).handler();
     case Scenes.SelectLanguage:
       return new SelectLanguageScene(ctx, user).handler();
-    case Scenes.RegisterNickname:
-      return new SetNicknameScene(ctx, user).handler();
   }
 };
